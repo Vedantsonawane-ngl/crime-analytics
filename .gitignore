@@ -1,0 +1,22 @@
+# Node modules & builds
+node_modules/
+dist/
+build/
+*.log
+
+# Java target & Maven
+target/
+*.class
+*.jar
+*.war
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# OS files
+.DS_Store
+Thumbs.db

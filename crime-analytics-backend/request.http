@@ -1,0 +1,400 @@
+### =====================================================
+### 1. REGISTER USER
+### =====================================================
+
+POST http://localhost:9090/api/auth/register
+Content-Type: application/json
+
+{
+    "name": "Yadnyesh",
+    "email": "yadnyesh@example.com",
+    "password": "mypassword123"
+}
+
+
+### =====================================================
+### 2. LOGIN
+### =====================================================
+
+POST http://localhost:9090/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "yadnyesh@example.com",
+    "password": "mypassword123"
+}
+
+
+### =====================================================
+### 3. CREATE CRIME
+### =====================================================
+
+POST http://localhost:9090/api/crimes
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YWRueWVzaEBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDczMzM1MywiZXhwIjoxNzg0NzM2OTUzfQ.MqmVEs0eJ02WHStRlxaLyAngkDHSrE9KnlxnIWRDK_s
+
+{
+    "crimeName": "Cybercrime",
+    "description": "Crimes involving computers, networks, or digital systems",
+    "category": "Cyber Crime",
+    "severity": "High"
+}
+
+
+### =====================================================
+### 4. GET ALL CRIMES
+### =====================================================
+
+GET http://localhost:9090/api/crimes
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YWRueWVzaEBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDczMzM1MywiZXhwIjoxNzg0NzM2OTUzfQ.MqmVEs0eJ02WHStRlxaLyAngkDHSrE9KnlxnIWRDK_s
+### =====================================================
+### 5. GET CRIME BY ID
+### =====================================================
+
+GET http://localhost:9090/api/crimes/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YWRueWVzaEBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDczMzM1MywiZXhwIjoxNzg0NzM2OTUzfQ.MqmVEs0eJ02WHStRlxaLyAngkDHSrE9KnlxnIWRDK_s
+
+
+### =====================================================
+### 6. CREATE CRIME RECORD
+### =====================================================
+
+POST http://localhost:9090/api/crime-records
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YWRueWVzaEBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDczMzM1MywiZXhwIjoxNzg0NzM2OTUzfQ.MqmVEs0eJ02WHStRlxaLyAngkDHSrE9KnlxnIWRDK_s
+
+{
+    "crimeId": 2,
+    "crimeType": "Cybercrime",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "location": "Hinjewadi",
+    "crimeDate": "2026-07-21",
+    "status": "Open",
+    "severity": "High",
+    "description": "Online financial fraud incident"
+}
+
+### =====================================================
+### 7. GET ALL CRIME RECORDS
+### =====================================================
+
+GET http://localhost:9090/api/crime-records
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YWRueWVzaEBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDczMzM1MywiZXhwIjoxNzg0NzM2OTUzfQ.MqmVEs0eJ02WHStRlxaLyAngkDHSrE9KnlxnIWRDK_s
+### =====================================================
+
+GET http://localhost:9090/api/crime-records/city/Pune
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YWRueWVzaEBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDczMzM1MywiZXhwIjoxNzg0NzM2OTUzfQ.MqmVEs0eJ02WHStRlxaLyAngkDHSrE9KnlxnIWRDK_s
+### 9. GET CRIME RECORDS BY TYPE
+### =====================================================
+
+GET http://localhost:9090/api/crime-records/type/Cybercrime
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YWRueWVzaEBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDczMzM1MywiZXhwIjoxNzg0NzM2OTUzfQ.MqmVEs0eJ02WHStRlxaLyAngkDHSrE9KnlxnIWRDK_s
+
+
+### =====================================================
+### 10. GET CRIME RECORDS BY SEVERITY
+### =====================================================
+
+GET http://localhost:9090/api/crime-records/severity/High
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YWRueWVzaEBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDczMzM1MywiZXhwIjoxNzg0NzM2OTUzfQ.MqmVEs0eJ02WHStRlxaLyAngkDHSrE9KnlxnIWRDK_s
+### =====================================================
+### 11. GET CRIME RECORDS BY STATUS
+### =====================================================
+
+GET http://localhost:9090/api/crime-records/status/Open
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YWRueWVzaEBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDczMzM1MywiZXhwIjoxNzg0NzM2OTUzfQ.MqmVEs0eJ02WHStRlxaLyAngkDHSrE9KnlxnIWRDK_s
+
+### CREATE CRIMINAL
+
+POST http://localhost:9090/api/criminals
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YWRueWVzaEBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDczNTA2MCwiZXhwIjoxNzg0NzM4NjYwfQ.bE8OEiAw70I3K2VVWs7aiLcwX4yPeprBhcIjz3Y9GIA
+
+{
+    "name": "Amit Sharma",
+    "alias": "Amit Bhai",
+    "gender": "Male",
+    "age": 35,
+    "address": "Pune, Maharashtra",
+    "phoneNumber": "9876543210",
+    "criminalStatus": "Wanted",
+    "description": "Suspected involvement in organized cybercrime activities"
+}
+
+### =====================================================
+### UPDATE CRIMINAL
+### =====================================================
+
+PUT http://localhost:9090/api/criminals/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YWRueWVzaEBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDczNTA2MCwiZXhwIjoxNzg0NzM4NjYwfQ.bE8OEiAw70I3K2VVWs7aiLcwX4yPeprBhcIjz3Y9GIA
+
+{
+    "name": "Amit Sharma Updated",
+    "alias": "Amit Bhai",
+    "gender": "Male",
+    "age": 36,
+    "address": "Hinjewadi, Pune, Maharashtra",
+    "phoneNumber": "9876543210",
+    "criminalStatus": "Under Investigation",
+    "description": "Updated criminal record with additional investigation details"
+}
+
+### =====================================================
+### DELETE CRIMINAL
+### =====================================================
+
+DELETE http://localhost:9090/api/criminals/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YWRueWVzaEBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDczNTA2MCwiZXhwIjoxNzg0NzM4NjYwfQ.bE8OEiAw70I3K2VVWs7aiLcwX4yPeprBhcIjz3Y9GIA
+
+
+### =====================================================
+### PREDICTION ENTITY APIs
+### =====================================================
+
+
+### =====================================================
+### 1. CREATE PREDICTION
+### =====================================================
+
+POST http://localhost:9090/api/predictions
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YWRueWVzaEBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDczNTgwMSwiZXhwIjoxNzg0NzM5NDAxfQ.qidPBQur3UsFWs2TttXv_LhBpx46lx7Ajq64wNPLvvc
+
+{
+    "crimeId": 2,
+    "crimeType": "Cybercrime",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "predictedRisk": "High",
+    "confidenceScore": 0.92,
+    "predictionDate": "2026-07-22T20:30:00",
+    "description": "AI model predicts a high risk of cybercrime based on historical crime patterns and recent incidents."
+}
+
+
+### =====================================================
+### 2. GET ALL PREDICTIONS
+### =====================================================
+
+GET http://localhost:9090/api/predictions
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YWRueWVzaEBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDczNTgwMSwiZXhwIjoxNzg0NzM5NDAxfQ.qidPBQur3UsFWs2TttXv_LhBpx46lx7Ajq64wNPLvvc
+
+
+### =====================================================
+### 3. GET PREDICTION BY ID
+### =====================================================
+
+GET http://localhost:9090/api/predictions/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YWRueWVzaEBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDczNTgwMSwiZXhwIjoxNzg0NzM5NDAxfQ.qidPBQur3UsFWs2TttXv_LhBpx46lx7Ajq64wNPLvvc
+
+
+### =====================================================
+### 4. GET PREDICTIONS BY CITY
+### =====================================================
+
+GET http://localhost:9090/api/predictions/city/Pune
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YWRueWVzaEBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDczNTgwMSwiZXhwIjoxNzg0NzM5NDAxfQ.qidPBQur3UsFWs2TttXv_LhBpx46lx7Ajq64wNPLvvc
+
+
+### =====================================================
+### 5. GET PREDICTIONS BY STATE
+### =====================================================
+
+GET http://localhost:9090/api/predictions/state/Maharashtra
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YWRueWVzaEBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDczNTgwMSwiZXhwIjoxNzg0NzM5NDAxfQ.qidPBQur3UsFWs2TttXv_LhBpx46lx7Ajq64wNPLvvc
+
+
+### =====================================================
+### 6. GET PREDICTIONS BY CRIME TYPE
+### =====================================================
+
+GET http://localhost:9090/api/predictions/type/Cybercrime
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YWRueWVzaEBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDczNTgwMSwiZXhwIjoxNzg0NzM5NDAxfQ.qidPBQur3UsFWs2TttXv_LhBpx46lx7Ajq64wNPLvvc
+
+
+### =====================================================
+### 7. GET PREDICTIONS BY RISK
+### =====================================================
+
+GET http://localhost:9090/api/predictions/risk/High
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YWRueWVzaEBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDczNTgwMSwiZXhwIjoxNzg0NzM5NDAxfQ.qidPBQur3UsFWs2TttXv_LhBpx46lx7Ajq64wNPLvvc
+
+
+### =====================================================
+### 8. UPDATE PREDICTION
+### =====================================================
+
+PUT http://localhost:9090/api/predictions/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YWRueWVzaEBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDczNTgwMSwiZXhwIjoxNzg0NzM5NDAxfQ.qidPBQur3UsFWs2TttXv_LhBpx46lx7Ajq64wNPLvvc
+
+{
+    "crimeId": 2,
+    "crimeType": "Cybercrime",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "predictedRisk": "Critical",
+    "confidenceScore": 0.97,
+    "predictionDate": "2026-07-22T21:00:00",
+    "description": "Updated prediction based on new crime data and increased cybercrime activity."
+}
+
+
+### =====================================================
+### 9. DELETE PREDICTION
+### =====================================================
+
+DELETE http://localhost:9090/api/predictions/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YWRueWVzaEBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDczNTgwMSwiZXhwIjoxNzg0NzM5NDAxfQ.qidPBQur3UsFWs2TttXv_LhBpx46lx7Ajq64wNPLvvc
+
+
+### =====================================================
+### REPORT ENTITY APIs
+### =====================================================
+
+
+### =====================================================
+### 1. CREATE REPORT
+### =====================================================
+
+POST http://localhost:9090/api/reports
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YWRueWVzaEBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDczNjE5OSwiZXhwIjoxNzg0NzM5Nzk5fQ.sazEMjkBoqmZLoWrCUkeE-tGQNoOS0YocpbKhtSHC7o
+
+{
+    "reportName": "Pune Cybercrime Analysis Report",
+    "reportType": "Crime Analysis",
+    "generatedBy": "Yadnyesh",
+    "generatedAt": "2026-07-22T21:00:00",
+    "filePath": "/reports/pune-cybercrime-analysis.pdf",
+    "description": "Detailed analysis of cybercrime incidents and predicted risks in Pune."
+}
+
+
+### =====================================================
+### 2. GET ALL REPORTS
+### =====================================================
+
+GET http://localhost:9090/api/reports
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YWRueWVzaEBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDczNjE5OSwiZXhwIjoxNzg0NzM5Nzk5fQ.sazEMjkBoqmZLoWrCUkeE-tGQNoOS0YocpbKhtSHC7o
+
+
+### =====================================================
+### 3. GET REPORT BY ID
+### =====================================================
+
+GET http://localhost:9090/api/reports/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YWRueWVzaEBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDczNjE5OSwiZXhwIjoxNzg0NzM5Nzk5fQ.sazEMjkBoqmZLoWrCUkeE-tGQNoOS0YocpbKhtSHC7o
+
+
+### =====================================================
+### 4. GET REPORTS BY TYPE
+### =====================================================
+
+GET http://localhost:9090/api/reports/type/Crime%20Analysis
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YWRueWVzaEBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDczNjE5OSwiZXhwIjoxNzg0NzM5Nzk5fQ.sazEMjkBoqmZLoWrCUkeE-tGQNoOS0YocpbKhtSHC7o
+
+
+### =====================================================
+### 5. GET REPORTS BY GENERATED BY
+### =====================================================
+
+GET http://localhost:9090/api/reports/generated-by/Yadnyesh
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YWRueWVzaEBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDczNjE5OSwiZXhwIjoxNzg0NzM5Nzk5fQ.sazEMjkBoqmZLoWrCUkeE-tGQNoOS0YocpbKhtSHC7o
+
+
+### =====================================================
+### 6. UPDATE REPORT
+### =====================================================
+
+PUT http://localhost:9090/api/reports/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YWRueWVzaEBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDczNjE5OSwiZXhwIjoxNzg0NzM5Nzk5fQ.sazEMjkBoqmZLoWrCUkeE-tGQNoOS0YocpbKhtSHC7o
+
+{
+    "reportName": "Updated Pune Cybercrime Analysis Report",
+    "reportType": "Crime Analysis",
+    "generatedBy": "Yadnyesh",
+    "generatedAt": "2026-07-22T22:00:00",
+    "filePath": "/reports/updated-pune-cybercrime-analysis.pdf",
+    "description": "Updated analysis of cybercrime incidents, severity, and predicted risks in Pune."
+}
+
+
+### =====================================================
+### 7. DELETE REPORT
+### =====================================================
+
+DELETE http://localhost:9090/api/reports/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YWRueWVzaEBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDczNjE5OSwiZXhwIjoxNzg0NzM5Nzk5fQ.sazEMjkBoqmZLoWrCUkeE-tGQNoOS0YocpbKhtSHC7o
+
+
+### =====================================================
+### CHAT HISTORY ENTITY APIs
+### =====================================================
+
+
+### =====================================================
+### 1. CREATE CHAT HISTORY
+### =====================================================
+
+POST http://localhost:9090/api/chat-history
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YWRueWVzaEBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDczOTY5MiwiZXhwIjoxNzg0NzQzMjkyfQ.QClsPWPs9T_xfpiYm8NDzmg3TdpjGoQX23PS1YO2XTY
+
+{
+    "userMessage": "Show me the crime statistics of Pune",
+    "aiResponse": "Pune has recorded several crime incidents. Cybercrime is one of the major categories observed in recent data.",
+    "timestamp": "2026-07-22T22:00:00",
+    "userId": 1
+}
+
+
+### =====================================================
+### 2. GET ALL CHAT HISTORY
+### =====================================================
+
+GET http://localhost:9090/api/chat-history
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YWRueWVzaEBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDczOTY5MiwiZXhwIjoxNzg0NzQzMjkyfQ.QClsPWPs9T_xfpiYm8NDzmg3TdpjGoQX23PS1YO2XTY
+
+
+### =====================================================
+### 3. GET CHAT HISTORY BY ID
+### =====================================================
+
+GET http://localhost:9090/api/chat-history/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YWRueWVzaEBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDczOTY5MiwiZXhwIjoxNzg0NzQzMjkyfQ.QClsPWPs9T_xfpiYm8NDzmg3TdpjGoQX23PS1YO2XTY
+
+
+### =====================================================
+### 4. GET CHAT HISTORY BY USER ID
+### =====================================================
+
+GET http://localhost:9090/api/chat-history/user/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YWRueWVzaEBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDczOTY5MiwiZXhwIjoxNzg0NzQzMjkyfQ.QClsPWPs9T_xfpiYm8NDzmg3TdpjGoQX23PS1YO2XTY
+
+
+### =====================================================
+### 5. UPDATE CHAT HISTORY
+### =====================================================
+
+PUT http://localhost:9090/api/chat-history/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YWRueWVzaEBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDczOTY5MiwiZXhwIjoxNzg0NzQzMjkyfQ.QClsPWPs9T_xfpiYm8NDzmg3TdpjGoQX23PS1YO2XTY
+
+{
+    "userMessage": "Show me the latest cybercrime statistics of Pune",
+    "aiResponse": "Updated response: Pune has experienced an increase in cybercrime incidents based on the available crime records.",
+    "timestamp": "2026-07-22T23:00:00",
+    "userId": 1
+}
+
+
+### =====================================================
+### 6. DELETE CHAT HISTORY
+### =====================================================
+
+DELETE http://localhost:9090/api/chat-history/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YWRueWVzaEBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDczOTY5MiwiZXhwIjoxNzg0NzQzMjkyfQ.QClsPWPs9T_xfpiYm8NDzmg3TdpjGoQX23PS1YO2XTY

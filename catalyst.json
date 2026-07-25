@@ -1,0 +1,11 @@
+{
+  "client": {
+    "source": "crime-analytics-frontend/dist"
+  },
+  "appsail": [
+    {
+      "name": "crime-analytics-backend",
+      "source": "crime-analytics-backend"
+    }
+  ]
+}
