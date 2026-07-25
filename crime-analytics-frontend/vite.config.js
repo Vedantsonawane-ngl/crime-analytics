@@ -10,7 +10,7 @@ export default defineConfig({
     port: 5173,
     proxy: {
       '/api': {
-        target: 'http://localhost:9090',
+        target: 'https://crime-analytics-backend-50044348096.development.catalystappsail.in',
         changeOrigin: true,
         secure: false,
       },

@@ -1,9 +1,6 @@
 {
-  "command": "java -jar crime-analytics-backend-0.0.1-SNAPSHOT.jar --server.port=$X_ZOHO_CATALYST_LISTEN_PORT",
+  "command": "sh -c 'java -Xmx400m -Xms128m -jar crime-analytics-backend-0.0.1-SNAPSHOT.jar --server.port=${X_ZOHO_CATALYST_LISTEN_PORT:-9090}'",
   "platform": "javase",
   "stack": "java21",
-  "buildPath": "target",
-  "env_variables": {
-    "SPRING_PROFILES_ACTIVE": "prod"
-  }
+  "buildPath": "appsail-deploy"
 }

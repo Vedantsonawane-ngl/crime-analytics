@@ -29,5 +29,5 @@ public class SocioEconomicData {
 
     private Long populationDensity;
 
-    private Double AverageIncomeInr;
+    private Double averageIncomeInr;
 }
