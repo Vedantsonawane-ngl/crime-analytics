@@ -1,0 +1,8 @@
+{
+  "name": "crime-analytics-platform",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "cd crime-analytics-frontend && npm install && npm run build"
+  }
+}
