@@ -2,7 +2,7 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 
 const APPSAIL_URL = 'https://crime-analytics-backend-50044348096.development.catalystappsail.in/api';
-const isProduction = typeof window !== 'undefined' && window.location.hostname.includes('catalystserverless.in');
+const isProduction = typeof window !== 'undefined' && !['localhost', '127.0.0.1'].includes(window.location.hostname);
 
 const axiosInstance = axios.create({
   baseURL: isProduction ? APPSAIL_URL : '/api',
